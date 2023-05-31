@@ -1,4 +1,9 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
   cloud:
     gateway:
       routes:
@@ -14,7 +19,6 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/api/v3/*
-
 # Enable below lines for troubleshooting
 #      httpserver:
 #        wiretap: true
